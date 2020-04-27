@@ -1,17 +1,13 @@
 import React, { useState } from 'react'
 import { View, Text, ImageBackground, StyleSheet, Image, Dimensions, TouchableOpacity, KeyboardAvoidingView, ScrollView } from 'react-native'
 import { BarCodeScanner } from 'expo-barcode-scanner'
-
 import Button from './../components/Button'
 import HeaderText from './../components/HeaderText'
 import LineText from '../components/LineText'
 import Modal from './../components/Modal'
 import PinInput from '../components/PinInput'
-
 import HeaderStyle from "../styles/HeaderStyle"
-
 import { Consumer as UserStatusConsumer } from './../global/userStatus'
-
 import SIZES from '../constants/Sizes'
 import COLORS from '../constants/Colors'
 import IMAGES from '../constants/Images'
@@ -22,7 +18,6 @@ const ratio = 365/771;
 
 export const ReportInfectedScreen = (props) => {
   var [hasPermission, setHasPermission] = useState(null)
-  var [showBarCodeScanner, setShowBarCodeScanner] = useState(false)
   var [errorMessage, setErrorMessage] = useState(null)
   var [modalVisible, setModalVisible] = useState(false)
   var [pinSubmitEnabled, setPinSubmitEnabled] = useState(false)
@@ -58,8 +53,9 @@ export const ReportInfectedScreen = (props) => {
                     onPress={async () => {
                       const { status } = await BarCodeScanner.requestPermissionsAsync();
                       setHasPermission(status === "granted")
-                      if (status === "granted")
-                        showBarcodeScanner()
+                      if (status === "granted") {
+                        props.navigation.navigate('Scan')
+                      }
                     }}
                   >
                     <Image source={require("../assets/images/qrscan.png")} resizeMode={"contain"} style={styles.qrImage} />
@@ -115,7 +111,7 @@ const styles = StyleSheet.create({
     fontSize: SIZES.reportAltHeaderSize,
     textAlign: "left"
   },
-  
+
   qrImage: {
     flex: 1,
     height: undefined,

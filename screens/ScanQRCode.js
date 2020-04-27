@@ -1,28 +1,17 @@
 import React, { useState } from 'react'
 import { ImageBackground, StyleSheet, Vibration, View } from 'react-native'
-
 import { BarCodeScanner } from 'expo-barcode-scanner'
-
-import { useHeaderHeight } from '@react-navigation/stack'
 import { Pulse } from 'react-native-loader'
 import BarcodeMask  from 'react-native-barcode-mask'
 import { Consumer as UserStatusConsumer } from './../global/userStatus'
-
-import { getDeviceId } from './../global/deviceId'
-import * as trackAPI from '../global/centralAPI'
-
-import SIZES from '../constants/Sizes'
 import COLORS from '../constants/Colors'
 import IMAGES from '../constants/Images'
-
 import HeaderStyle from '../styles/HeaderStyle'
-
 import HeaderText from './../components/HeaderText'
 import EmphasizedText from '../components/EmphasizedText'
 
-export default ({ navigation }) => {
-  var [scanned, setScanned] = useState(false)
-  const headerHeight = useHeaderHeight()
+const ScanQRCode = (props) => {
+  let [scanned, setScanned] = useState(false)
 
   const renderScan = (status) => {
     if(scanned) {
@@ -49,8 +38,8 @@ export default ({ navigation }) => {
 
             const success = await status.reportInfected(data)
 
-            navigation.goBack()
-            navigation.navigate(success ? 'ReportThankYou' : 'ReportFailed')
+            props.navigation.goBack()
+            props.navigation.navigate(success ? 'ReportThankYou' : 'ReportFailed')
           }}
         >
           <BarcodeMask
@@ -80,6 +69,9 @@ export default ({ navigation }) => {
     </ImageBackground>
   )
 }
+
+export default ScanQRCode
+
 const styles = StyleSheet.create({
   container: {
     flex: 1,

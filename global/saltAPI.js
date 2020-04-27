@@ -4,9 +4,9 @@ var { hashRiskPoint } = require('./risk')
 
 // Can add multiple servers
 export const SALT_SERVERS = [
-  __DEV__ ? 
-    'http://localhost:3000/dev/get-salt' : 
-    'https://au-tas-api.trackcovid19spread.com/get-salt'
+  __DEV__ ?
+    'http://localhost:3000/dev/get-salt' :
+    'https://13ua7sp8li.execute-api.eu-central-1.amazonaws.com/production/get-salt'
 ]
 
 /**

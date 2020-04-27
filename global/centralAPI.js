@@ -2,8 +2,8 @@ import * as Sentry from 'sentry-expo'
 
 if (__DEV__)
   var API_URL = 'http://localhost:3000/dev/'
-else 
-  var API_URL = 'https://au-tas-api.trackcovid19spread.com/'
+else
+  var API_URL = 'https://13ua7sp8li.execute-api.eu-central-1.amazonaws.com/production/'
 
 /**
  * Submits location data to the server
