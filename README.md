@@ -1,3 +1,12 @@
+# Corona Check
+<p align="center">
+  <a href="http://www.youtube.com/watch?v=iFD_NvJiP5s" target="_blank">
+    <img src="http://img.youtube.com/vi/iFD_NvJiP5s/0.jpg" alt="Click to play on Youtube" border="10" />
+  </a>
+  <br/>
+  <a href="http://www.youtube.com/watch?v=iFD_NvJiP5s" target="_blank">► Youtube video</a>
+</p>
+
 # Why?
 One of the most useful tools we have in limiting the spread of the virus is contact tracing. If we can quickly inform those who are at risk of unknowingly contracting the virus, those individuals can take precautions to prevent passing it on to others. Speed is an advantage. It also means that once we ease out of lockdown we can selectively isolate to prevent further outbreaks without bringing the economy to a halt.
 
