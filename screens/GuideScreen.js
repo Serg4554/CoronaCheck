@@ -52,6 +52,7 @@ const styles = StyleSheet.create({
   },
 
   container: {
-    marginHorizontal: DefaultMargin
-  }
+    marginHorizontal: DefaultMargin,
+    flex: 1
+  },
 })

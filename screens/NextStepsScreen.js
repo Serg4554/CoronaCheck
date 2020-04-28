@@ -2,7 +2,7 @@ import React, { useState } from "react"
 
 import { ImageBackground, Image, StyleSheet, View } from "react-native"
 import { useHeaderHeight } from '@react-navigation/stack'
-import { ScrollView } from "react-native-gesture-handler"
+import { ScrollView } from 'react-native-gesture-handler'
 
 import HeaderText from "../components/HeaderText"
 import SelectorComponent from "../components/SelectorComponent"
@@ -22,47 +22,53 @@ export const NextStepsScreen = props => {
   var [selectedScreen, setSelectedScreen] = useState(0)
   let svRef = React.createRef()
 
-  return(
+  return (
     <ImageBackground source={IMAGES.Background} style={IMAGES.BackgroundStyle}>
-      <View style={{marginTop: headerHeight}}>
-        <View style={styles.container}>
-          <View style={styles.logoContainer}>
-            <Image source={IMAGES.LogoText} resizeMode={"cover"} resizeMethod={"resize"} style={styles.logoStyle} />
-          </View>
+      <View style={[styles.container, {paddingTop: headerHeight}]}>
 
-          <HeaderText style={styles.headerText}>
-            Next steps
-          </HeaderText>
-
-          <View style={styles.selector}>
-            <SelectorComponent title="Main Facts" active={selectedScreen === 0} onPressCallback={() => {setSelectedScreen(0) ; svRef.current.scrollTo({x: 0, y: 0, animated: true})}} />
-            <SelectorComponent title="Medical Treatments" active={selectedScreen === 1} onPressCallback={() => { setSelectedScreen(1) ; svRef.current.scrollTo({x: 0, y: 0, animated: true})}} />
-          </View>
-
-          <ScrollView ref={svRef}>
-            {
-              selectedScreen === 0 ? <NextStepsMainScreen /> :
-              selectedScreen === 1 ? <NextStepsMedicalScreen /> :
-              undefined
-            }
-          </ScrollView>
+        <View style={styles.logoContainer}>
+          <Image source={IMAGES.LogoText} resizeMode={"cover"} resizeMethod={"resize"} style={styles.logoStyle} />
         </View>
+
+        <HeaderText style={styles.headerText}>
+          Next steps
+        </HeaderText>
+
+        <View style={styles.selector}>
+          <SelectorComponent title="Main Facts" active={selectedScreen === 0} onPressCallback={() => {setSelectedScreen(0) ; svRef.current.scrollTo({x: 0, y: 0, animated: true})}} />
+          <SelectorComponent title="Medical Treatments" active={selectedScreen === 1} onPressCallback={() => { setSelectedScreen(1) ; svRef.current.scrollTo({x: 0, y: 0, animated: true})}} />
+        </View>
+
+        <ScrollView ref={svRef}>
+          {
+            selectedScreen === 0 ? <NextStepsMainScreen /> :
+            selectedScreen === 1 ? <NextStepsMedicalScreen /> :
+            undefined
+          }
+        </ScrollView>
+
       </View>
     </ImageBackground>
-    )
+  );
 }
 
 export default NextStepsScreen
 
 const styles = StyleSheet.create({
+
+  selector: {
+    marginTop: 10,
+    flexDirection: "row",
+    marginBottom: 20
+  },
+
   container: {
-    flexDirection: "column",
     marginHorizontal: DefaultMargin,
-    marginTop: 20
+    flex: 1
   },
 
   logoContainer: {
-    marginBottom: "5%"
+    marginBottom: 10
   },
 
   logoStyle: {
@@ -73,11 +79,8 @@ const styles = StyleSheet.create({
   headerText: {
     fontSize: SIZES.selfReportHeader,
     color: COLORS.altTintColor,
-    textAlign: "left"
-  },
-
-  selector: {
-    flexDirection: "row",
-    marginBottom: 40
+    textAlign: "left",
+    flex: 0,
+    flexDirection: "row"
   }
 })
