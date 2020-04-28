@@ -18,9 +18,6 @@ import COLORS from "./../constants/Colors"
 import IMAGES from "./../constants/Images"
 import { DefaultMargin } from "./../constants/Layout"
 
-const ratio = 1149/157
-const imageHeight = 36
-
 export default ({ navigation: { goBack } }) => {
 
   const headerHeight = useHeaderHeight()
@@ -87,8 +84,8 @@ const styles = StyleSheet.create({
   },
 
   logoStyle: {
-    height: imageHeight,
-    width: imageHeight * ratio
+    height: IMAGES.LogoSmallHeight,
+    width: IMAGES.LogoSmallHeight * IMAGES.LogoSmallRatio
   },
 
   headerText: {

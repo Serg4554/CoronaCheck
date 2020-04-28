@@ -4,7 +4,7 @@ import { ImageBackground, StyleSheet, Text, View } from "react-native"
 import { ScrollView } from 'react-native-gesture-handler'
 
 import HeaderText from "../components/HeaderText"
-import GuideSelectorComponent from "../components/GuideSelectorComponent"
+import SelectorComponent from "../components/SelectorComponent"
 
 import GuideAppScreen from "../screens/GuideAppScreen"
 import GuideSymptomsScreen from "../screens/GuideSymptomsScreen"
@@ -26,11 +26,11 @@ export const GuideScreen = props => {
           Guide
         </HeaderText>
         <View style={styles.selector}>
-          <GuideSelectorComponent title="App" active={selectedScreen === 0} onPressCallback={() => {setSelectedScreen(0) ; svRef.current.scrollTo({x: 0, y: 0, animated: true})}} />
-          <GuideSelectorComponent title="Symptoms" active={selectedScreen === 1} onPressCallback={() => { setSelectedScreen(1) ; svRef.current.scrollTo({x: 0, y: 0, animated: true})}} />
-          <GuideSelectorComponent title="Prevention" active={selectedScreen === 2} onPressCallback={() => { setSelectedScreen(2) ; svRef.current.scrollTo({x: 0, y: 0, animated: true})}} />
+          <SelectorComponent title="App" active={selectedScreen === 0} onPressCallback={() => {setSelectedScreen(0) ; svRef.current.scrollTo({x: 0, y: 0, animated: true})}} />
+          <SelectorComponent title="Symptoms" active={selectedScreen === 1} onPressCallback={() => { setSelectedScreen(1) ; svRef.current.scrollTo({x: 0, y: 0, animated: true})}} />
+          <SelectorComponent title="Prevention" active={selectedScreen === 2} onPressCallback={() => { setSelectedScreen(2) ; svRef.current.scrollTo({x: 0, y: 0, animated: true})}} />
         </View>
-        <ScrollView style={styles.contentContainer} ref={svRef}>
+        <ScrollView ref={svRef}>
           {
             selectedScreen === 0 ? <GuideAppScreen /> :
             selectedScreen === 1 ? <GuideSymptomsScreen /> :

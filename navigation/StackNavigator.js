@@ -10,6 +10,8 @@ import SelfReportScreen from "../screens/SelfReportScreen"
 import ReportThankYouScreen from "../screens/ReportThankYouScreen"
 import ReportFailedScreen from "../screens/ReportFailedScreen"
 
+import NextStepsScreen from "../screens/NextStepsScreen"
+
 import OnboardingMain from "../screens/OnboardingMain"
 import OnboardingHeader from "../screens/OnboardingHeader"
 import OnboardingPermissions from "../screens/OnboardingPermissions"
@@ -43,6 +45,8 @@ export default (props) => {
       <Stack.Screen options={StackScreenNoHeader} name="OnboardingMain" component={OnboardingMain} />
       <Stack.Screen options={StackScreenNoHeader} name="OnboardingHeader" component={OnboardingHeader} />
       <Stack.Screen options={StackScreenNoHeader} name="OnboardingPermissions" component={OnboardingPermissions} />
+
+      <Stack.Screen options={StackScreenBackHeader} name="NextSteps" component={NextStepsScreen} />
 
       <Stack.Screen options={StackScreenBackHeader} name="SelfReport" component={SelfReportScreen} />
       <Stack.Screen options={StackScreenBackHeader} name="Scan" component={ScanQRCodeScreen}/>

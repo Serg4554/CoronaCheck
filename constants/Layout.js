@@ -1,7 +1,7 @@
-import { Dimensions } from 'react-native';
+import { Dimensions } from "react-native";
 
-const width = Dimensions.get('window').width;
-const height = Dimensions.get('window').height;
+const width = Dimensions.get("window").width;
+const height = Dimensions.get("window").height;
 
 export default {
   window: {
@@ -11,4 +11,4 @@ export default {
   isSmallDevice: width < 375,
 };
 
-export const DefaultMargin = "10%"
+export const DefaultMargin = "7%"

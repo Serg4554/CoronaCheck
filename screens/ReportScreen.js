@@ -31,7 +31,7 @@ export const ReportScreen = (props) => {
   var [pin, setPin] = useState("")
 
   function showBarcodeScanner() {
-    props.navigation.navigate("ReportFailed")
+    props.navigation.navigate("Scan")
   }
 
   return (
@@ -132,8 +132,8 @@ const styles = StyleSheet.create({
   },
 
   imageContainer: {
-    height: deviceWidth * 0.8 * ratio,
-    width: deviceWidth * 0.8,
+    height: deviceWidth * ratio * (1 - (2 * parseInt(DefaultMargin) / 100)),
+    width: deviceWidth * (1 - (2 * parseInt(DefaultMargin) / 100)),
     marginVertical: 10
   },
 

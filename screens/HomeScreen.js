@@ -17,15 +17,23 @@ import SIZES from './../constants/Sizes'
 import IMAGES from '../constants/Images'
 import { DefaultMargin } from "../constants/Layout"
 
-export default function HomeScreen() {
+export default function HomeScreen(props) {
 
   // Figure out which variant of home screen to show
   const HomeScreenVariant = () => {
+
+    var [hasLocationPermission, setHasLocationPermission] = useState(true)
+
     // TODO: logic to detect if a person is infected/exposed
     // TODO: logic to detect if we have enough info
-    let hasEnoughInfo = false
+    let hasEnoughInfo = true
     let isPossibleExposure = false
     let isInfected = false
+
+    LocationPermissionStatus().then((status) => {
+      setHasLocationPermission((status === 1))
+    })
+
     if (isInfected) {
       return (
         <View style={styles.contentContainer}>
@@ -43,7 +51,7 @@ export default function HomeScreen() {
           </EmphasizedText>
         </View>
       )
-    } else if (LocationPermissionStatus() !== 1) {
+    } else if (!hasLocationPermission) {
       return (
         <View style={styles.contentContainer}>
           <View>
@@ -90,7 +98,7 @@ export default function HomeScreen() {
             Based on available location data, you may have come into contact with COVID-19.
           </EmphasizedText>
           <View style={styles.buttonContainer}>
-            <Button title="Next steps" icon="keyboard-arrow-right" />
+            <Button title="Next steps" icon="keyboard-arrow-right" onPress={() => {props.navigation.navigate("NextSteps")}} />
           </View>
         </View>
       )
