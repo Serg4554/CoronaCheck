@@ -6,9 +6,12 @@ import BarcodeMask  from 'react-native-barcode-mask'
 import { Consumer as UserStatusConsumer } from './../global/userStatus'
 import COLORS from '../constants/Colors'
 import IMAGES from '../constants/Images'
-import HeaderStyle from '../styles/HeaderStyle'
+
+import HeaderStyle from '../styles/HeaderStyleApp'
+
 import HeaderText from './../components/HeaderText'
 import EmphasizedText from '../components/EmphasizedText'
+import { DefaultMargin } from '../constants/Layout'
 
 const ScanQRCode = (props) => {
   let [scanned, setScanned] = useState(false)
@@ -75,6 +78,7 @@ export default ScanQRCode
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    marginHorizontal: DefaultMargin
   },
   contentContainer: {
     flex: 30,

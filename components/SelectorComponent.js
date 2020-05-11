@@ -5,7 +5,7 @@ import { StyleSheet, Text, View } from "react-native"
 import SIZES from "../constants/Sizes"
 import COLORS from "../constants/Colors"
 
-const GuideSelectorComponent = props => {
+const SelectorComponent = props => {
   const { title, active, onPressCallback } = props
   return (
     <View style={[styles.parentView, active ? styles.parentViewActive : undefined]}>
@@ -14,7 +14,7 @@ const GuideSelectorComponent = props => {
   )
 }
 
-export default GuideSelectorComponent
+export default SelectorComponent
 
 const styles = StyleSheet.create({
   parentView: {
