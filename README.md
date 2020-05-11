@@ -1,3 +1,14 @@
+# Corona Check
+<p align="center">
+  <a href="http://www.youtube.com/watch?v=iFD_NvJiP5s" target="_blank">
+    <img src="http://img.youtube.com/vi/iFD_NvJiP5s/0.jpg" alt="Click to play on Youtube" border="10" />
+  </a>
+  <br/>
+  <a href="http://www.youtube.com/watch?v=iFD_NvJiP5s" target="_blank">► Youtube video</a>
+  <br/>
+  <span>Demo below</span>
+</p>
+
 # Why?
 One of the most useful tools we have in limiting the spread of the virus is contact tracing. If we can quickly inform those who are at risk of unknowingly contracting the virus, those individuals can take precautions to prevent passing it on to others. Speed is an advantage. It also means that once we ease out of lockdown we can selectively isolate to prevent further outbreaks without bringing the economy to a halt.
 
@@ -111,3 +122,16 @@ After a period of time has elapsed where a person can remain symptomless or on a
 Now each exact data point can be hashed with the returned salts and sent to the central server and the central server will respond with any location points that have been marked as ‘at risk’ for this user. 
 
 When a user reports their location points, if they are COVID-19 positive, run the respective risk algorithms. If they do not return any historic data points that have been marked as 'at risk'.
+
+
+# Demo
+
+We deployed the [backend project](https://github.com/Serg4554/CoronaCheckBackend) with a sample authority and analysis report, so you can scan the QR below or introduce the pin to simulate the check of an analysis and anonymously send the location data as detailed.
+
+You can find the APK for installation in an Android device on the `release` section
+
+<p align="center">
+  <img src="sample-qr.png" height="200px" width="200px" alt="QR code" />
+  <br/>
+  <span>1111-1111-1111</span>
+</p>
