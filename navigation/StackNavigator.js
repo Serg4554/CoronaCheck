@@ -20,7 +20,7 @@ import BottomTabNavigator from "./BottomTabNavigator"
 
 import SIZES from "../constants/Sizes"
 
-const Stack = createStackNavigator();
+const Stack = createStackNavigator()
 
 export default (props) => {
   // Custom header design

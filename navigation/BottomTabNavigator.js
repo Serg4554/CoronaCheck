@@ -1,17 +1,17 @@
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
-import * as React from 'react'
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs"
+import * as React from "react"
 
-import HomeScreen from '../screens/HomeScreen'
+import HomeScreen from "../screens/HomeScreen"
 import GuideScreen from "../screens/GuideScreen"
-import ReportScreen from '../screens/ReportScreen'
+import ReportScreen from "../screens/ReportScreen"
 
-import HomeIcon from '../assets/icons/Home'
-import AlertIcon from '../assets/icons/Alert'
-import GuideIcon from '../assets/icons/Guide'
-import TabBar from './TabBar'
+import HomeIcon from "../assets/icons/Home"
+import AlertIcon from "../assets/icons/Alert"
+import GuideIcon from "../assets/icons/Guide"
+import TabBar from "./TabBar"
 
 const BottomTab = createBottomTabNavigator();
-const INITIAL_ROUTE_NAME = 'Home';
+const INITIAL_ROUTE_NAME = "Home";
 
 export default function BottomTabNavigator({ navigation, route }) {
   // Set the header title on the parent stack navigator depending on the
@@ -29,7 +29,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Home"
         component={HomeScreen}
         options={{
-          title: 'Home',
+          title: "Home",
           tabBarIcon: ({ focused }) => <HomeIcon focused={focused} />,
         }}
       />
@@ -37,7 +37,7 @@ export default function BottomTabNavigator({ navigation, route }) {
         name="Guide"
         component={GuideScreen}
         options={{
-          title: 'Guide',
+          title: "Guide",
           tabBarIcon: ({ focused }) => <GuideIcon focused={focused} />,
         }}
       />

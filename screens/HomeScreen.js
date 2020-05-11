@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import Icon from 'react-native-vector-icons/MaterialIcons'
 import { ImageBackground, StyleSheet, View} from 'react-native'
-import { ScrollView } from 'react-native-gesture-handler'
+
 import * as Updates from 'expo-updates'
 
 import { LocationPermissionStatus } from './../global/permissions'
@@ -130,7 +130,7 @@ export default function HomeScreen(props) {
 
 HomeScreen.navigationOptions = {
   header: null,
-};
+}
 
 const styles = StyleSheet.create({
   container: {
@@ -167,4 +167,4 @@ const styles = StyleSheet.create({
     bottom: "10%",
     width: "100%"
   }
-});
+})
